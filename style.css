@@ -128,8 +128,9 @@ header {
 header ul {
     display: flex;
     align-items: center;
-    width: 45%;
-    justify-content: space-between;
+}
+header ul li {
+    margin-left: 50px;
 }
 header a {
     font-size: 13px;
@@ -143,7 +144,7 @@ Bookmark
 }
 .bookmark main {
     margin-left: 12%;
-    width: 37%;
+    width: 38%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -158,20 +159,22 @@ Bookmark
     width: 50%;
     display: flex;
     justify-content: flex-end;
-    margin-right: 1%;
 }
 .ilu-hero {
+    height: 385px;
+    width: 578px;
     z-index: 5;
+    position: absolute;
+    right: 50px;
 }
-.bookmark h1::after {
-    content: '';
-    display: block;
+.bg-blue-right {
     height: 352px;
     width: 500px;
     border-radius: 176px 0 0 176px;
     background: var(--blue);
-    position: absolute;
+    position: relative;
     right: 0px;
+    bottom: -100px;
 }
 /***************
 Features
@@ -207,7 +210,7 @@ Features
     font-weight: 600;
 }
 .bod-color.active {
-    border-bottom: 5px solid var(--red);
+    border-bottom: 4px solid var(--red);
     position: relative;
     bottom: -20px;
 }
@@ -218,37 +221,33 @@ Features
 .group-35 aside {
     width: 50%;
 }
-.group-35 main {
-    width: 50%;
+.ilu-hero1 {
+    height: 346px;
+    width: 536px;
+    z-index: 5;
+    position: absolute;
+    left: 10%;
 }
-.group-35 {
-    display: flex;
-}
-.group-35 aside {
-    margin-left: 12%;
-    width: 38%;
-}
-.group-35 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 8%;
-    width: 30%;
-}
-.group-35 main p {
-    margin: 25px 0;
-}
-.group-35 main h2::after {
-    content: '';
-    display: block;
+.bg-blue-left {
     height: 352px;
     width: 500px;
     border-radius: 0 176px 176px 0;
     background: var(--blue);
-    position: absolute;
+    position: relative;
     left: 0;
+    bottom: -100px;
     z-index: -1;
     }
+.group-35 main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5%;
+    width: 33%;
+}
+.group-35 main p {
+    margin: 25px 0;
+}
 /***************
 Download the extension
 ***************/
@@ -305,10 +304,12 @@ FAQ
 }
 .faq .faq-text {
     text-align: center;
-    border-bottom: var(--bodBorder);
 }
 .faq .faq-text p {
-    margin: 15px 0 30px 0;
+    margin: 30px 0 50px 0;
+}
+.faq .first-ch {
+    border-top: var(--bodBorder);
 }
 .faq article {
     border-bottom: var(--bodBorder);
@@ -353,13 +354,13 @@ Bottom
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 0;
+    padding: 60px 0;
 }
 .bottom h2 {
     color: var(--white);
     width: 30%;
     text-align: center;
-    margin: 25px 0;
+    margin: 35px 0;
     font-weight: 500;
 }
 .bottom .btn-red {
@@ -382,6 +383,7 @@ Bottom
 }
 .hidden-mess {
     display: none;
+    position: absolute;
 }
 .hidden-mess.active {
     display: block;
@@ -452,4 +454,172 @@ footer a {
 }
 .footer-icons .icons-img:hover {
     fill: var(--red);
+}
+/***************
+Responsive Tablet
+***************/
+@media (max-width: 1200px) {
+    .container .bookmark {
+        width: 100%;
+    }
+    .bookmark {
+        flex-direction: column;
+    }
+    .bookmark main {
+        width: 83%;
+        margin: 0 auto;
+        order: 2;
+        padding: 200px 0 50px 0;
+        text-align: center;
+    }
+    .bookmark aside {
+        width: 100%;
+        order: 1;
+        margin: 0 auto;
+    }
+    .bookmark aside .ilu-hero {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .bookmark h1::after {
+        top: 325px;
+    }
+    .group-35 {
+        flex-direction: column;
+    }
+    .group-35 .ilu-hero1 {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .group-35 main {
+        width: 83%;
+        margin: 175px auto 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .download-ext {
+        margin-top: 0px;
+    }
+    .download-ext .p {
+        width: 65%;
+    }
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        margin: 100px 0 150px 0;
+    }
+    .bottom h2 {
+        width: 50%;
+    }
+    .form {
+        flex-direction: column;
+    }
+    .bottom .btn-red {
+        width: 292px;
+        margin: 23px 0 0 0;
+    }
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer ul {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: space-between;
+    }
+    footer ul li {
+        margin-bottom: 25px;
+    }
+    .footer-icons {
+        display: flex;
+    }
+    .footer-icons svg {
+        margin: 0 25px;
+    }
+}
+
+/***************
+Responsive Mob
+***************/
+@media (max-width: 767px) {
+    header {
+        display: none;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .container {
+        width: 83%;
+    }
+    .ilu-hero {
+        width: 312px;
+        height: 208px;
+    }
+    .bg-blue-right {
+        height: 203px;
+        width: 278px;
+        bottom: -50px;
+    }
+    .bookmark main {
+        width: 83%;
+        margin: 0 auto;
+        order: 2;
+        padding: 100px 0 50px 0;
+        text-align: center;
+    }
+    .bookmark main h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .buttons {
+        display: flex;
+        justify-content: center;
+    }
+    .features {
+        margin-top: 75px;
+    }
+    .features p {
+        width: 100%;
+    }
+    .features-click {
+        flex-direction: column;
+        justify-content: space-around;
+        width: 83%;
+        margin: 0px auto;
+    }
+    .bod-color.active {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .ilu-hero1 {
+        width: 311px;
+        height: 201px;
+    }
+    .bg-blue-left {
+        height: 203px;
+        width: 278px;
+        bottom: -50px;
+    }
+    .group-35 main {
+        margin: 125px auto 0 auto;
+    }
+    .cards {
+        margin: 50px 0 150px 0;
+    }
+    .faq {
+        width: 83%;
+    }
+    .bottom h2 {
+        width: 83%;
+    }
+    footer ul {
+        width: 100%;
+    }
 }
