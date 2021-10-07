@@ -30,18 +30,22 @@ mobNavClose.addEventListener('click' , function() {
 //Features
 group30.forEach((e) => {
     e.addEventListener('click' , function(q) {
+        const clicked = q.target.closest('.group-30');
 
-        if (q.target.children[0] || q.target.textContent === "Simple Bookmarking") {
+        if (clicked.children[0].textContent === "Simple Bookmarking") {
+            clicked.children[0].style.color = "var(--black)"
             iluHero1.src = "images/illustration-features-tab-1.svg";
             group35H2.textContent = "Bookmark in one click";
             group35P.textContent = "Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.";
         }   
-        if (q.target.children[0] || q.target.textContent === "Speedy Searching") {
+        if (clicked.children[0].textContent === "Speedy Searching") {
+            clicked.children[0].style.color = "var(--black)"
             iluHero1.src = "images/illustration-features-tab-2.svg";
             group35H2.textContent = "Intelligent search";
             group35P.textContent = "Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.";
         }
-        if (q.target.children[0] || q.target.textContent === "Easy Sharing") {
+        if (clicked.children[0].textContent === "Easy Sharing") {
+            clicked.children[0].style.color = "var(--black)"
             iluHero1.src = "images/illustration-features-tab-3.svg";
             group35H2.textContent = "Share your bookmarks";
             group35P.textContent = "Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.";
@@ -65,13 +69,16 @@ faqDivs.forEach((faqDiv) => {
         if(faqDiv.children[1].classList.contains("active")){
             faqDiv.children[1].classList.remove("active");
             faqDiv.children[0].children[1].classList.remove("active");
+            faqDiv.children[0].children[0].style.color = "var(--black)"
         } else {
         faqDivs.forEach((e) => {
         e.children[1].classList.remove("active");
         e.children[0].children[1].classList.remove("active");
+        faqDiv.children[0].children[0].style.color = "var(--black)"
         })
         faqDiv.children[1].classList.add("active");
         faqDiv.children[0].children[1].classList.add("active");
+        faqDiv.children[0].children[0].style.color = "var(--black)"
         }
     })
 })
